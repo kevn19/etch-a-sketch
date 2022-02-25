@@ -110,8 +110,11 @@ function resetGrid(){
     let draw = document.querySelectorAll(".square")
 
     draw.forEach((item)=>
-        item.addEventListener("mouseover", ()=>{
-            item.style.backgroundColor = color
+        item.addEventListener("mouseover", (e)=>{
+            if(e.buttons==1){
+                item.style.backgroundColor = color
+            }
+            
         }))
 }
 
