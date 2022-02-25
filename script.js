@@ -53,8 +53,11 @@ function sketch(){
     let draw = document.querySelectorAll(".square")
 
     draw.forEach((item)=>
-        item.addEventListener("mouseover", ()=>{
-            item.style.backgroundColor = color
+        item.addEventListener("mouseover", (e)=>{
+            if (e.buttons == 1){
+                item.style.backgroundColor = color
+            }
+            
         }))
 }
 
@@ -69,8 +72,11 @@ function changeColor() {
     let draw = document.querySelectorAll(".square")
 
     draw.forEach((item)=>
-        item.addEventListener("mouseover", ()=>{
-            item.style.backgroundColor = color
+        item.addEventListener("mouseover", (e)=>{
+            if (e.buttons ==1){
+                item.style.backgroundColor = color
+            }
+            
         }))
 }
 
@@ -83,9 +89,12 @@ function randomColor(){
     
 
     draw.forEach((item)=>
-        item.addEventListener("mouseover", ()=>{
-            let randomColor = Math.floor(Math.random()*16777215).toString(16)
-            item.style.backgroundColor = "#"+randomColor
+        item.addEventListener("mouseover", (e)=>{
+            if(e.buttons==1){
+                let randomColor = Math.floor(Math.random()*16777215).toString(16)
+                item.style.backgroundColor = "#"+randomColor
+            }
+            
         }))
 }
 
@@ -110,8 +119,10 @@ function erase(){
     let draw = document.querySelectorAll(".square")
 
     draw.forEach((item)=>
-        item.addEventListener("mouseover", ()=>{
-            item.style.backgroundColor = "white";
+        item.addEventListener("mouseover", (e)=>{
+            if(e.buttons==1){
+                item.style.backgroundColor = "white";
+            }
         }))
 }
 
